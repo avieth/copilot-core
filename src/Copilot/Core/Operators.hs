@@ -49,6 +49,7 @@ data Op1 a b where
   BwNot    :: Bits     a => Type a -> Op1 a a
   -- Casting operator.
   Cast     :: (Integral a, Num b) => Type a -> Type b -> Op1 a b
+  Castf    :: (RealFrac a, Num b) => Type a -> Type b -> Op1 a b
   -- Struct operator.
   GetField :: KnownSymbol s => Type a -> Type b -> (a -> Field s b) -> Op1 a b
 
